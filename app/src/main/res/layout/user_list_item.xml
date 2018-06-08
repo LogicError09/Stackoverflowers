@@ -1,16 +1,24 @@
-<android.support.v7.widget.CardView android:layout_width="match_parent"
-    android:layout_height="250dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="2dp"
-    app:cardMaxElevation="1dp"
-    app:cardElevation="1dp"
-    app:contentPadding="12dp"
-    app:contentPaddingBottom="0dp"
-    app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="true"
-    android:id="@+id/cardView"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="stackoverflowuser"
+            type="com.leentantu.stackoverflowers.model.StackoverflowUser"/>
+    </data>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="2dp"
+        app:cardMaxElevation="1dp"
+        app:cardElevation="1dp"
+        app:contentPadding="12dp"
+        app:contentPaddingBottom="0dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:id="@+id/cardView"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,7 +31,7 @@
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@{stackoverflowuser.userImage}"
             app:civ_border_color="#FFF"
             app:civ_border_width="3dp" />
 
@@ -34,8 +42,9 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:id="@+id/username"
-            android:text="@string/app_name"
+            android:text="@{stackoverflowuser.userName}"
             android:textSize="18sp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +53,8 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/username">
 
-            <View android:layout_width="20dp"
+              <View
+                android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/gold"/>
@@ -57,7 +67,8 @@
                 android:layout_margin="5dp"
                 android:text="1" />
 
-            <View android:layout_width="20dp"
+             <View
+                android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/silver"/>
@@ -70,7 +81,8 @@
                 android:layout_margin="5dp"
                 android:text="1" />
 
-            <View android:layout_width="20dp"
+             <View
+                android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/bronze"/>
@@ -81,7 +93,6 @@
                 android:id="@+id/bronzeCount"
                 android:layout_margin="5dp"
                 android:text="1" />
-
 
         </LinearLayout>
 
@@ -94,7 +105,8 @@
             android:layout_alignParentBottom="true"
             android:layout_below="@id/medals">
 
-            <View android:layout_width="12dp"
+             <View
+                android:layout_width="12dp"
                 android:layout_height="12dp"
                 android:gravity="center"
                 android:layout_margin="5dp"
@@ -105,16 +117,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:id="@+id/userlocation"
-                android:text="London, UK" />
-
-
-
-
-
+                android:text="@{stackoverflowuser.userLocation}"/>
 
         </LinearLayout>
-
 
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
+</layout>
