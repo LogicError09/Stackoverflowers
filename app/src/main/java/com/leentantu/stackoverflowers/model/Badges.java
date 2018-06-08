@@ -15,7 +15,6 @@ public class Badges {
     public void setBronze(int bronze) {
         this.bronze = bronze;
     }
-
     public int getSilver() {
         return this.silver;
     }
@@ -23,7 +22,6 @@ public class Badges {
     public void setSilver(int silver) {
         this.silver = silver;
     }
-
     public int getGold() {
         return this.gold;
     }
