@@ -1,12 +1,16 @@
 package com.leentantu.stackoverflowers.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 import java.util.List;
 import java.util.Objects;
 
+@Entity(tableName = "stackoverflow_user")
 public class StackoverflowUser {
 
+    @PrimaryKey
     private String userName;
     private String userLocation;
     private String userImageURL;
